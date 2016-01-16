@@ -1,1 +1,1 @@
-SELECT FirstName, LastName, Customerid FROM Customer
+SELECT FirstName, LastName, Customerid, Country FROM Customer WHERE Country != "USA"

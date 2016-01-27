@@ -1,6 +1,7 @@
-SELECT Invoice.Total AS "Invoice Total", Customer.FirstName, Customer.LastName, Customer.Country, Employee.FirstName 
-AS "Sales Rep First Name", Employee.LastName 
-AS "Sales Rep Last Name"   
+SELECT Invoice.Total AS "Invoice Total", 
+Customer.FirstName || ' ' || Customer.LastName AS 'Customer Name', Customer.Country, 
+Employee.FirstName  || ' ' || Employee.LastName AS 'Sales Rep Name'  
 FROM Customer JOIN Invoice 
-ON Customer.Customerid == Invoice.Customerid   JOIN Employee 
+ON Customer.Customerid == Invoice.Customerid   
+JOIN Employee 
 ON Customer.SupportRepid == Employee.Employeeid;
